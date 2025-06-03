@@ -5,3 +5,4 @@ Arquivos no repositório:
 
 - Projeto IA.pdf: Texto sobre o Projeto 2
 - projeto.py: Código do Projeto
+- Youtube: https://youtu.be/bRRT_3pdApk
