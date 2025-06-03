@@ -6,7 +6,7 @@ import json
 from fpdf import FPDF  # Para gerar o PDF
 
 
-# --- Função para Gerar PDF (Modificada) ---
+# Função para Gerar PDF 
 class PDF(FPDF):
     def header(self):
         pass  # Sem cabeçalho padrão
@@ -16,10 +16,7 @@ class PDF(FPDF):
 
     def chapter_body(self, body_text):
         # Usando uma fonte padrão do PDF como Arial.
-        # FPDF2 tentará lidar com a codificação para caracteres comuns do português.
         self.set_font("Arial", "", 11)
-        # O texto 'body_text' é uma string Unicode Python.
-        # FPDF2 tentará codificá-la para uma codificação compatível com a fonte (ex: latin-1/cp1252).
         self.multi_cell(
             0, 7, body_text
         )  # Ajuste a altura da linha (7) conforme necessário
@@ -33,18 +30,13 @@ def criar_pdf_cv(texto_cv_revisado, nome_arquivo="cv_melhorado.pdf"):
     pdf.chapter_body(texto_cv_revisado)
 
     try:
-        # Ao gerar para uma string (dest='S'), FPDF retorna uma string codificada em latin-1
-        # que representa o arquivo PDF. Isso é para a estrutura do PDF.
         pdf_output_bytes = pdf.output(dest="S").encode("latin-1")
         return pdf_output_bytes, None
     except Exception as e:
-        # Embora menos provável com caracteres comuns, um erro ainda pode ocorrer.
         return None, f"Erro ao gerar o PDF: {e}"
 
 
-# --- Funções Auxiliares (Mesmas da versão anterior) ---
-
-
+# Funções Auxiliares
 def extrair_texto_pdf(arquivo_pdf_bytes):
     """Extrai texto de um arquivo PDF fornecido como bytes."""
     texto = ""
@@ -157,7 +149,7 @@ def analisar_e_revisar_cv_com_gemini(texto_cv, api_key):
         )
 
 
-# --- Interface do Streamlit (Modificada para remover aviso da fonte) ---
+# Interface do Streamlit 
 
 st.set_page_config(page_title="AutoCV Pro 🚀📄", layout="wide")
 
