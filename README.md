@@ -3,6 +3,9 @@
 
 Arquivos no repositório:
 
-- Projeto IA.pdf: Texto sobre o Projeto 2
+- Projeto IA.pdf: Texto sobre o Projeto
+- Curriculo.pdf: Curriculo usado nos testes
+- Curriculo_AutoCV_melhorado.pdf: Curriculo pós revisão
 - projeto.py: Código do Projeto
-- Youtube: https://youtu.be/bRRT_3pdApk
+- Apresentação do Projeto: https://youtu.be/bRRT_3pdApk
+
